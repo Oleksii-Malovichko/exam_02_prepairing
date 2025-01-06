@@ -6,70 +6,45 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:25:35 by alex              #+#    #+#             */
-/*   Updated: 2024/12/19 18:26:54 by alex             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:42:28 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int	get_num(int n)
-{
-	int result = 0;
-	int counter = 1;
-	while (n >= 2)
-	{
-		result = (n % 2) + '0';
-		n = n / 2;
-		counter++;
-	}
-	return (counter);
-}
+// void print_bits(unsigned char octet)
+// {
+//     unsigned char mask = 128; // Маска с наиболее значащим битом (10000000)
+//     while (mask > 0)
+//     {
+//         if (octet >= mask)
+//         {
+//             putchar('1');
+//             octet -= mask;
+//         }
+//         else
+//         {
+//             putchar('0');
+//         }
+//         mask /= 2; // Сдвигаем маску вправо
+//     }
+// }
 
-void	get_num2(int n)
+void print_bits(unsigned char octet)
 {
-	int result = 1;
-	if (n >= 2)
+	if (octet > 1)
 	{
-		get_num2(n / 2);
+		print_bits(octet / 2);
 	}
-	result = (n % 2) + '0';
+	char result = (octet % 2) + '0';
 	write(1, &result, 1);
-}
-
-void	print_nulls(int len)
-{
-	int q_nulls = 8 - len;
-	int i = 0;
-	while (i < q_nulls)
-	{
-		write(1, "0", 1);
-		i++;
-	}
-}
-
-void	print_bits(unsigned char octet)
-{
-	int	result = 0;
-	if (octet == '0')
-	{
-		write(1, "00000000", 8);
-		return ;
-	}
-	if (octet == '1')
-	{
-		write(1, "00000001", 8);
-		return ;
-	}
-	int n = octet - '0';
-	int len = get_num(n);
-	print_nulls(len);
-	get_num2(n);
 }
 
 int main()
 {
-	print_bits('2');
+	unsigned char byte = 2;
+	print_bits(byte);
 }
 /* 
 0 0

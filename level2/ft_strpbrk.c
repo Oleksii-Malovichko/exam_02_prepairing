@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:51:30 by alex              #+#    #+#             */
-/*   Updated: 2024/12/19 14:58:00 by alex             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:06:33 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 int main()
 {
 	char *s1 = "hello, world";
-	char *s2 = "mamamiah";
+	char *s2 = "mamamiao";
 	if (ft_strpbrk(s1, s2))
 		printf("%c\n", *ft_strpbrk(s1, s2));
 	else

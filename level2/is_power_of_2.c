@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:06:31 by alex              #+#    #+#             */
-/*   Updated: 2024/12/19 17:29:59 by alex             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:31:14 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 
 int	    is_power_of_2(unsigned int n)
 {
+	// if (n == 0)
+	// 	return (0);
+	// return ((n & (n - 1)) == 0);
 	if (n == 0)
-		return (0);
-	return (n & (n - 1) == 0);
+		return 0;
+	while (n % 2 == 0)
+		n /= 2;
+	return (n == 1);
 }
 
 int main()
 {
-	printf("%d\n", is_power_of_2(4294967295));
+	printf("%d\n", is_power_of_2(8));
 	// printf("%d\n", INT_MAX);
 }

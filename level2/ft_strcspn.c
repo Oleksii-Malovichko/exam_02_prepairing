@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:47:01 by alex              #+#    #+#             */
-/*   Updated: 2024/12/19 14:49:49 by alex             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:03:47 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	ft_strcspn(const char *s, const char *reject)
 
 int main()
 {
-	char *s1 = "hello, world";
-	char *s2 = "mamalhmia";
+	char *s1 = "abcdef";
+	char *s2 = "dxz";
 	printf("%zd\n", ft_strcspn(s1, s2));
 }
