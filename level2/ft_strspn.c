@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:00:05 by alex              #+#    #+#             */
-/*   Updated: 2025/01/06 17:08:34 by alex             ###   ########.fr       */
+/*   Updated: 2025/01/06 19:09:17 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ size_t	ft_strspn(const char *s, const char *accept)
 
 int main()
 {
-	const char *str1 = "12345a";
-    const char *str2 = "123446";
+	const char *str1 = "12a345a";
+    const char *str2 = "ф123456";
 
     size_t result = strspn(str1, str2);
     printf("Initial numeric segment length: %zu\n", result);
